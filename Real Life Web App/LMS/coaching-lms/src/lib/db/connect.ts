@@ -12,7 +12,7 @@ declare global {
 const cache: MongooseCache = global.mongooseCache ?? { conn: null, promise: null };
 global.mongooseCache = cache;
 
-export async function connectDb() {
+export async function connectDB() {
   const MONGODB_URI = process.env.MONGODB_URI;
 
   if (!MONGODB_URI) {

@@ -1,10 +1,10 @@
-import { connectDb } from "@/lib/db/connect";
+import { connectDB } from "@/lib/db/connect";
 import { NextResponse } from "next/server";
 
 
 export async function GET(){
     try {
-        await connectDb()
+        await connectDB()
         return NextResponse.json(
             {ok:true,message:"API is health. DB connected."},{status:200}
         );
