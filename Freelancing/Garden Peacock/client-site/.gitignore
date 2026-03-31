@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Dependencies
 
 node_modules/
@@ -20,17 +19,10 @@ build/
 
 logs
 *.log
-=======
-# Node modules
-node_modules/
-
-# Logs
->>>>>>> 7873b7f823bcbbfebd55a02c99824bc37577ae5a
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-<<<<<<< HEAD
 # OS files
 
 .DS_Store
@@ -79,20 +71,3 @@ tmp/
 # Local images (optional)
 
 public/uploads/
-=======
-# Environment files
-.env
-.env.local
-
-# Build output
-dist/
-build/
-
-# IDE/editor files
-.vscode/
-.idea/
-
-# System files
-.DS_Store
-Thumbs.db
->>>>>>> 7873b7f823bcbbfebd55a02c99824bc37577ae5a
