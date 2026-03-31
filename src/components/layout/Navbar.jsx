@@ -12,7 +12,6 @@ export default function Navbar() {
     { name: "Contact", path: "/contact" },
   ];
 
-  // Active class helper
   const linkClass = ({ isActive }) =>
     `text-sm font-medium transition ${
       isActive
@@ -23,8 +22,6 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-green-100 bg-white/95 shadow-sm backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        
-        {/* Logo */}
         <NavLink to="/" className="block">
           <h1 className="text-lg font-bold tracking-tight text-green-700 sm:text-2xl">
             Garden Peacock
@@ -34,16 +31,19 @@ export default function Navbar() {
           </p>
         </NavLink>
 
-        {/* Desktop Nav */}
         <nav className="hidden items-center gap-6 md:flex">
           {navLinks.map((link) => (
-            <NavLink key={link.name} to={link.path} className={linkClass}>
+            <NavLink
+              key={link.name}
+              to={link.path}
+              end={link.path === "/"}
+              className={linkClass}
+            >
               {link.name}
             </NavLink>
           ))}
         </nav>
 
-        {/* Desktop Buttons */}
         <div className="hidden items-center gap-3 md:flex">
           <NavLink
             to="/contact"
@@ -60,7 +60,6 @@ export default function Navbar() {
           </NavLink>
         </div>
 
-        {/* Mobile Menu Button */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="inline-flex items-center justify-center rounded-lg border border-green-200 p-2 text-green-700 md:hidden"
@@ -69,7 +68,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {menuOpen && (
         <div className="border-t border-green-100 bg-white shadow-md md:hidden">
           <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4 sm:px-6">
@@ -77,6 +75,7 @@ export default function Navbar() {
               <NavLink
                 key={link.name}
                 to={link.path}
+                end={link.path === "/"}
                 onClick={() => setMenuOpen(false)}
                 className={({ isActive }) =>
                   `rounded-lg px-3 py-2 text-sm font-medium ${
